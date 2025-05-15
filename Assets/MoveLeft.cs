@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-    public float moveSpeed = 5;
-    public float bound = -40;
-    //private float increaseBy = 0.1;
+    public float moveSpeed = 5f;
+    public float bound = -40f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
