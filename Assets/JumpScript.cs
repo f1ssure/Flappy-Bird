@@ -33,12 +33,20 @@ public class JumpScript : MonoBehaviour
         }
 
         // Manage rotations
-        /*if (transform.eulerAngles.z > -10) {
-            transform.eulerAngles.z += 5 * Time.deltaTime;
-        }*/
+        float currentZ = transform.eulerAngles.z;
 
-        if (rigged.linearVelocity.y > 0) {
-            transform.rotation = Quaternion.Euler(0, 0, 10);
+        if (currentZ > 180f) currentZ -= 360f;
+
+        if (rigged.linearVelocity.y > 0 && currentZ < 10f) {
+            currentZ += 100 * Time.deltaTime;
         }
+
+        if (rigged.linearVelocity.y < 0 && currentZ > -10f) {
+            currentZ -= 75 * Time.deltaTime;
+        }
+
+        currentZ = Mathf.Clamp(currentZ, -10f, 10f);
+
+        transform.eulerAngles = new Vector3(0, 0, currentZ);
     }
 }
