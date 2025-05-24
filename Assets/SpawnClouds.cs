@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class SpawnPipes : MonoBehaviour
+public class SpawnCloud : MonoBehaviour
 {
-    public GameObject pipe;
-    public float spawnTime = 3f;
-    private float verticalOffset = 10f;
+    public GameObject cloud;
+    public float spawnTime = 2f;
+    private float verticalOffset = 15f;
     private float time = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnPipe();
+        spawnCloud();
     }
 
     // Update is called once per frame
@@ -19,16 +19,16 @@ public class SpawnPipes : MonoBehaviour
         time += Time.deltaTime;
         
         if (time > spawnTime) {
-            SpawnPipe();
-            time = 0f;
+            spawnCloud();
+            time = 0;
         }
     }
 
-    void SpawnPipe() {
+    void spawnCloud() {
         float upperBound = transform.position.y + verticalOffset;
         float lowerBound = transform.position.y - verticalOffset;
         float randomY = Random.Range(lowerBound, upperBound);
         Vector3 pos = new Vector3(transform.position.x, randomY, 0f);
-        Instantiate(pipe, pos, transform.rotation);
+        Instantiate(cloud, pos, transform.rotation);
     }
 }

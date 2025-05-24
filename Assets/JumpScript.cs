@@ -38,11 +38,11 @@ public class JumpScript : MonoBehaviour
         if (currentZ > 180f) currentZ -= 360f;
 
         if (rigged.linearVelocity.y > 0 && currentZ < 10f) {
-            currentZ += 100 * Time.deltaTime;
+            currentZ += 175 * Time.deltaTime;
         }
 
         if (rigged.linearVelocity.y < 0 && currentZ > -10f) {
-            currentZ -= 75 * Time.deltaTime;
+            currentZ -= 125 * Time.deltaTime;
         }
 
         currentZ = Mathf.Clamp(currentZ, -10f, 10f);
