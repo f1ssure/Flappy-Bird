@@ -20,7 +20,7 @@ public class SpawnCloud : MonoBehaviour
         
         if (time > spawnTime) {
             spawnCloud();
-            time = 0;
+            time = Random.Range(0f, 4f);
         }
     }
 
