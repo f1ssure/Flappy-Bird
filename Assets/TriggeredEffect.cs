@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class TriggeredEffect : MonoBehaviour
 {
-    public CountScore logic;
+    public ScoreManipulation logic;
 
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("ScoreLogic").GetComponent<CountScore>();
+        logic = GameObject.FindGameObjectWithTag("ScoreLogic").GetComponent<ScoreManipulation>();
     }
 
     void OnTriggerEnter2D(Collider2D other)  
